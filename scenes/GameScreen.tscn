@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 50, 10 )
+
+[node name="Root" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 250 )
+
+[node name="BorderLeft" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( -400, 250 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderLeft"]
+shape = SubResource( 1 )
+
+[node name="BorderRight" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 400, 250 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderRight"]
+shape = SubResource( 1 )
+
+[node name="Projectiles" type="Node" parent="."]
+

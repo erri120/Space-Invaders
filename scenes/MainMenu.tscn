@@ -26,6 +26,8 @@ margin_bottom = 150.0
 custom_fonts/font = SubResource( 1 )
 text = "START"
 script = ExtResource( 2 )
+change = true
+scene = "GameScreen.tscn"
 
 [node name="HighscoresButton" type="Button" parent="Control"]
 margin_left = 225.0
