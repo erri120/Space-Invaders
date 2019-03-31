@@ -17,7 +17,6 @@ func get_input():
 	velocity = velocity.normalized() * MOVE_SPEED
 	if Input.is_action_just_released("player_shoot"):
 		var projectile = load("res://scenes/Projectile.tscn").instance()
-		projectile.set_name("Projectile")
 		var pos = position
 		pos.y-=35
 		projectile.position = pos
