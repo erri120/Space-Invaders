@@ -23,10 +23,14 @@ func _ready():
 		field.append([])
 		field[i].resize(cols)
 		for j in range (0,cols):
-			var enemy01 = load("res://scenes/Enemy01.tscn").instance()
-			enemy01.position = pos
-			enemy01.row_index = i
-			field[i][j] = enemy01
-			get_node("../Enemies").add_child(enemy01)
+			var enemy = null
+			if(i<rows/2):
+				enemy = load("res://scenes/Enemy01.tscn").instance()
+			else:
+				enemy = load("res://scenes/Enemy02.tscn").instance()
+			enemy.position = pos
+			enemy.row_index = i
+			field[i][j] = enemy
+			get_node("../Enemies").add_child(enemy)
 			pos = Vector2(pos.x+distance_x,pos.y)
 		pos = Vector2(start_pos.x,pos.y+distance_y)
