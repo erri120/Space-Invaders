@@ -11,11 +11,12 @@ var field=[]
 func move_row(left):
 	for i in range (0, rows):
 		for j in range (0, cols):
-			field[i][j].position.y+=64
-			if(left):
-				field[i][j].velocity.x=1
-			else:
-				field[i][j].velocity.x=-1
+			if(is_instance_valid(field[i][j])):
+				field[i][j].position.y+=64
+				if(left):
+					field[i][j].velocity.x=1
+				else:
+					field[i][j].velocity.x=-1
 
 func _ready():
 	var pos = start_pos
